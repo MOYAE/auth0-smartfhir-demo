@@ -25,7 +25,7 @@ A more complete onboarding guide is a work in progress- however here are some ge
 - Copy /auth0/config.json.example to /auth0/config.json (you can edit this file as a part of the deploy CLI setup too)
 - Navigate to auth0 subfolder `cd /auth0`
 - Deploy the resources to auth0: `a0deploy import --config_file config.json --input_file tenant.yaml`
-- In the auth0 console, in the applications menu, open up the "Patient Picker Client Credentials" application, and copy the client_id, and client_secret values into "PICKER_CLIENT_ID and PICKER_CLIENT_SECRET" in config.json.
+- In the auth0 console, in the applications menu, open up the "Moyae Login" application, and copy the client_id, and client_secret values into "PICKER_CLIENT_ID and PICKER_CLIENT_SECRET" in config.json.
 - Redeploy the resources to auth0: `a0deploy import --config_file config.json --input_file tenant.yaml`
 - [Configure the authz domain name](https://auth0.com/docs/customize/custom-domains/self-managed-certificates#provide-your-domain-name-to-auth0) you've chosen as a custom domain in auth0 (this cannot be automatically done)  
 - When presented with an "origin domain name", and a "cname-api-key" save these values for step 3.

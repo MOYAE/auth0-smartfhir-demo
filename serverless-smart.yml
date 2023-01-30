@@ -15,34 +15,34 @@ plugins:
 params:
   default:
     #The domain name you want publicly as the base domain name.
-    BASE_DOMAIN: auth.moyae-dev.com
+    BASE_DOMAIN: auth.moyae.com
     #Route53 hosted domain (include the period at the end)
-    BASE_URL_TLD: moyae-dev.com.
+    BASE_URL_TLD: moyae.com.
     #Your auth0 domain name: ex- your_domain.us.auth0.com
-    AUTH0_BASE_DOMAIN: smart-moyae-dev.us.auth0.com
+    AUTH0_BASE_DOMAIN: smart-moyae-prod.us.auth0.com
     #The auth0 custom backend domain name for auth0 custom domain names.
-    AUTH0_CUSTOM_DOMAIN_NAME_BACKEND: smart-moyae-dev-cd-g7wjtavomtmercmq.edge.tenants.us.auth0.com
+    AUTH0_CUSTOM_DOMAIN_NAME_BACKEND: smart-moyae-prod-cd-zjuxwowid9fnb9ub.edge.tenants.us.auth0.com
 
     #The auth0 custom domain name api key.
-    AUTH0_CUSTOM_DOMAIN_NAME_APIKEY: 4a7704ba6d672e9a2388d9e4d132d6cf7f8fd0234aa5aeeacfa8109386f54d6a
+    AUTH0_CUSTOM_DOMAIN_NAME_APIKEY: bf93d84aa241874b3d6a61c6e2ff54703b0e85efca5bcea2bb6c5ce2c65992b1
     #The backend domain name for the api gateway deployment. Navigate to api gateway in aws console -> custom domain names -> find the one for the auth endpoint.
-    API_GATEWAY_DOMAIN_NAME_BACKEND: d-9k96code9l.execute-api.us-east-1.amazonaws.com
+    API_GATEWAY_DOMAIN_NAME_BACKEND: d-zoz86li2ui.execute-api.us-east-1.amazonaws.com
 
     #OAuth2 clientid/secret used to call Auth0 API during patient picker and for refresh token caching. use the picker ones for now.
-    AUTH0_API_CLIENTID: i8Fx6ipnZSgYugn9XDwoA5zZIXCm42ry
-    AUTH0_API_CLIENTSECRET: gcomJ0PQhcfysWiv1sR_gCH1ZCEcMk4Jc5DnB1363t8U-WvF6YCFLYZhrbEw0BwM
+    AUTH0_API_CLIENTID: CSJTzbRk7tF3WLOlexGM9zI3ZkmTuQvj
+    AUTH0_API_CLIENTSECRET: L_9rvpKJtOE_jODoteZd7s3tyhIctNwztJebQ23wDug7smvo0fxjhbcUGV_KIn_I
 
     #A hash secret used to hash refresh token contents stored in auth0
     #Make sure this matches the REFRESH_TOKEN_HASH_SECRET in config.json!
     REFRESH_TOKEN_HASH_SECRET: AnEye4AnEyeMakesTheWholeWorldBlind
 
     #ID/key used for signing the tokens to/from Auth0 in communicating via redirect.
-    PICKER_DISPLAY_NAME: Patient Picker
-    PICKER_CLIENT_ID: i8Fx6ipnZSgYugn9XDwoA5zZIXCm42ry
-    PICKER_CLIENT_SECRET: gcomJ0PQhcfysWiv1sR_gCH1ZCEcMk4Jc5DnB1363t8U-WvF6YCFLYZhrbEw0BwM
+    PICKER_DISPLAY_NAME: Moyae Login
+    PICKER_CLIENT_ID: CSJTzbRk7tF3WLOlexGM9zI3ZkmTuQvj
+    PICKER_CLIENT_SECRET: L_9rvpKJtOE_jODoteZd7s3tyhIctNwztJebQ23wDug7smvo0fxjhbcUGV_KIn_I
 
     #ID of the resource server/API in Auth0 - used to pull scope definitions. found in auth0 dashboard. applications => settings.
-    FHIR_RESOURCE_SERVER_ID: 6347c19b8ccf1b30a56dc3c4
+    FHIR_RESOURCE_SERVER_ID: 63d6e84d167f2127cf2fee86
 
 
 provider:
