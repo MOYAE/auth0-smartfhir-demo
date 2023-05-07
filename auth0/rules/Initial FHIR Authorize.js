@@ -1,4 +1,6 @@
 function (user, context, callback) {
+
+  const jwt = require('jsonwebtoken');
   if(context.protocol !== 'oidc-basic-profile') {
     //If we're not on the first /authorize call, then we should skip.
     //If we're on a token refresh, or a callback from the patient picker we don't need this rule.
@@ -12,21 +14,24 @@ function (user, context, callback) {
       {
         sub: user.user_id,
         requested_client_id: context.clientID,
-        requested_scopes: context.request.query.scope
+        requested_scopes: context.request.query.scope, 
+        tenant: user.user_metadata.tenant
       }
     );
     //Redirect to the patient picker.
     context.redirect = {
-      url: configuration.PICKER_URL + '?token=' + token
+      url: configuration.PICKER_URL + `?token=${token}`
     };
     return callback(null, user, context);
   
   function createToken(clientId, clientSecret, issuer, user) {
     const options = {
-      expiresInMinutes: 5,
+      expiresIn: '30m',
       audience: clientId,
       issuer: issuer
     };
-    return jwt.sign(user, clientSecret, options);
+    console.log("what is the context here", context); 
+
+    return jwt.sign({...user, tenant: user.tenant}, clientSecret, options);
   }
 }
